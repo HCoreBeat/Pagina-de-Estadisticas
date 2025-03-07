@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas de la Página</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Estadísticas de la Página</h1>
+    <button id="reload-button">Recargar Estadísticas</button>
+    <table id="estadisticas-table">
+        <thead>
+            <tr>
+                <th>IP</th>
+                <th>País</th>
+                <th>Fecha y Hora</th>
+                <th>Duración (s)</th>
+                <th>Afiliado</th>
+                <th>Nombre del Comprador</th>
+                <th>Teléfono</th>
+                <th>Correo</th>
+                <th>Productos</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se llenarán las estadísticas dinámicamente -->
+        </tbody>
+    </table>
+
+    <script src="estadisticas.js"></script>
+</body>
+</html>
