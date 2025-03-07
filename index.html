@@ -14,10 +14,15 @@
             text-align: center;
             color: #333;
         }
+        .table-container {
+            width: 100%;
+            overflow-x: auto; /* Permite el desplazamiento horizontal en dispositivos pequeños */
+            margin: 20px 0;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            min-width: 800px; /* Ancho mínimo para la tabla */
         }
         table, th, td {
             border: 1px solid #ddd;
@@ -42,30 +47,41 @@
         button:hover {
             background-color: #45a049;
         }
+        @media (max-width: 768px) {
+            th, td {
+                padding: 8px;
+                font-size: 14px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+        }
     </style>
 </head>
 <body>
     <h1>Estadísticas de la Página</h1>
     <button id="reload-button">Recargar Estadísticas</button>
-    <table id="estadisticas-table">
-        <thead>
-            <tr>
-                <th>IP</th>
-                <th>País</th>
-                <th>Fecha y Hora</th>
-                <th>Duración (s)</th>
-                <th>Afiliado</th>
-                <th>Nombre del Comprador</th>
-                <th>Teléfono</th>
-                <th>Correo</th>
-                <th>Productos</th>
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Aquí se llenarán las estadísticas dinámicamente -->
-        </tbody>
-    </table>
+    <div class="table-container">
+        <table id="estadisticas-table">
+            <thead>
+                <tr>
+                    <th>IP</th>
+                    <th>País</th>
+                    <th>Fecha y Hora</th>
+                    <th>Duración (s)</th>
+                    <th>Afiliado</th>
+                    <th>Nombre del Comprador</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                    <th>Productos</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se llenarán las estadísticas dinámicamente -->
+            </tbody>
+        </table>
+    </div>
 
     <script src="estadisticas.js"></script>
 </body>
