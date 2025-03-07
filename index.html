@@ -5,55 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estadísticas de la Página</title>
     <style>
+        /* Estilos generales */
         body {
             font-family: Arial, sans-serif;
             background-color: #f9f9f9;
-            margin: 20px;
-        }
-        h1 {
-            text-align: center;
+            margin: 0;
+            padding: 20px;
             color: #333;
         }
+
+        h1 {
+            text-align: center;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        /* Contenedor de la tabla */
         .table-container {
             width: 100%;
-            overflow-x: auto; /* Permite el desplazamiento horizontal en dispositivos pequeños */
+            overflow-x: auto;
             margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: #fff;
         }
+
+        /* Estilos de la tabla */
         table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 800px; /* Ancho mínimo para la tabla */
+            min-width: 800px;
         }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
+
         th, td {
-            padding: 10px;
-            text-align: center;
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
         }
+
         th {
-            background-color: #f2f2f2;
+            background-color: #4caf50;
+            color: white;
+            font-weight: bold;
         }
-        button {
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Botón de recarga */
+        #reload-button {
             display: block;
-            margin: 10px auto;
+            margin: 20px auto;
             padding: 10px 20px;
             background-color: #4caf50;
             color: white;
             border: none;
-            cursor: pointer;
             border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
         }
-        button:hover {
+
+        #reload-button:hover {
             background-color: #45a049;
         }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
             th, td {
                 padding: 8px;
                 font-size: 14px;
             }
+
             h1 {
                 font-size: 24px;
+            }
+
+            #reload-button {
+                width: 100%;
+                padding: 12px;
+                font-size: 14px;
             }
         }
     </style>
@@ -70,11 +101,14 @@
                     <th>Fecha y Hora</th>
                     <th>Duración (s)</th>
                     <th>Afiliado</th>
-                    <th>Nombre del Comprador</th>
+                    <th>Nombre</th>
                     <th>Teléfono</th>
                     <th>Correo</th>
                     <th>Productos</th>
                     <th>Total</th>
+                    <th>Navegador</th>
+                    <th>Sistema</th>
+                    <th>Tipo de Usuario</th>
                 </tr>
             </thead>
             <tbody>
