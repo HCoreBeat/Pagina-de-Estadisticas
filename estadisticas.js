@@ -22,9 +22,15 @@ function llenarTabla(estadisticas) {
     estadisticas.forEach(est => {
         const row = document.createElement("tr");
 
-        const productos = est.compras
+        // Formatear la lista de productos
+        const productos = est.compras && est.compras.length > 0
             ? est.compras.map(item => `${item.producto} (x${item.cantidad})`).join(", ")
             : "N/A";
+
+        // Formatear el precio total de la compra
+        const precioTotal = est.precio_compra_total
+            ? `$${parseFloat(est.precio_compra_total).toFixed(2)}`
+            : "$0.00";
 
         row.innerHTML = `
             <td>${est.ip || "Desconocido"}</td>
@@ -36,7 +42,7 @@ function llenarTabla(estadisticas) {
             <td>${est.telefono_comprador || "N/A"}</td>
             <td>${est.correo_comprador || "N/A"}</td>
             <td>${productos}</td>
-            <td>$${est.precio_compra_total || 0}</td>
+            <td>${precioTotal}</td>
         `;
         tableBody.appendChild(row);
     });
